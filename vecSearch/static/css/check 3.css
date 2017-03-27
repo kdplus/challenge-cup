@@ -1,0 +1,36 @@
+ textarea::-webkit-input-placeholder {
+            color: #c5c5c5 !important;
+        }
+        textarea:-moz-placeholder {
+        color: #c5c5c5  !important; / Mozilla Firefox 4 to 18 /
+        }
+        textarea::-moz-placeholder {
+        color: #c5c5c5  !important; / Mozilla Firefox 19+ /
+        }
+        textarea:-ms-input-placeholder {
+        color: #c5c5c5   !important; / Internet Explorer 10+ */
+        }
+
+.SpanHeight{
+            letter-spacing:1px;
+            font-size: 18px;
+            overflow-y:hidden;
+            overflow-x:hidden;
+            border:0;
+            background:transparent;
+            font-family:'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;}
+
+.titleStyle{
+	color:#337ab7;
+	font-size: 48px;
+}
+
+.Max_msg{
+    font-size: 18px;
+    color: #c5c5c5;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    border:0;
+    background:transparent;
+    font-family:'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
+}
