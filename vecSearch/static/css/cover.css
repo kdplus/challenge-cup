@@ -1,0 +1,829 @@
+/*********** Fonts ***********/
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/montserrat.eot");
+    src: url("/fonts/montserrat.eot") format("embedded-opentype"),
+         url("/fonts/montserrat.woff") format("woff"),
+         url("/fonts/montserrat.ttf") format("truetype"),
+         url("/fonts/montserrat.svg#MontserratRegular") format("svg");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/opensans-regular.eot");
+    src: url("/fonts/opensans-regular.eot") format("embedded-opentype"),
+         url("/fonts/opensans-regular.woff") format("woff"),
+         url("/fonts/opensans-regular.ttf") format("truetype"),
+         url("/fonts/opensans-regular.svg#OpenSansRegular") format("svg");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/opensans-light.eot");
+    src: url("/fonts/opensans-light.eot") format("embedded-opentype"),
+         url("/fonts/opensans-light.woff") format("woff"),
+         url("/fonts/opensans-light.ttf") format("truetype"),
+         url("/fonts/opensans-light.svg#OpenSansLight") format("svg");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/opensans-semibold.eot");
+    src: url("/fonts/opensans-semibold.eot") format("embedded-opentype"),
+         url("/fonts/opensans-semibold.woff") format("woff"),
+         url("/fonts/opensans-semibold.ttf") format("truetype"),
+         url("/fonts/opensans-semibold.svg#OpenSansSemibold") format("svg");
+    font-weight: 600;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('/fonts/fontello.eot?74710251');
+  src: url('/fonts/fontello.eot?74710251#iefix') format('embedded-opentype'),
+       url('/fonts/fontello.woff?74710251') format('woff'),
+       url('/fonts/fontello.ttf?74710251') format('truetype'),
+       url('/fonts/fontello.svg?74710251#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-down-open:before,
+.icon-calendar:before,
+.icon-location:before,
+.icon-doc-text:before,
+.icon-mail:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+ 
+  font-variant: normal;
+  text-transform: none;
+     
+  line-height: 1em; 
+}
+ 
+.icon-down-open:before { content: '\e800'; }
+.icon-calendar:before { content: '\e801'; } 
+.icon-location:before { 
+  content: '\e802';   
+  margin-right: 0.1em;
+  margin-left: -0.1em;
+}
+.icon-doc-text:before { content: '\e803'; } 
+.icon-mail:before { content: '\e804'; }
+
+
+/*********** Styles ***********/
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+pre {
+  display: table;
+  margin: 10px auto 0px;
+}
+
+/*a {*/
+  /*color: inherit;*/
+  /*border-bottom: 1px dashed #A2A2A2;*/
+/*}*/
+
+/*a:hover {*/
+  /*text-decoration: none;*/
+  /*border-bottom: 1px dashed #000000;*/
+  /*color: #5C5C5C;*/
+/*}*/
+
+.tt {
+  border-bottom: 1px dashed #A2A2A2;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+#logo {
+  width: 600px;
+  margin: 100px 0px 50px;
+}
+
+#home {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100%;
+  min-height: 750px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  background: url("/img/shanghai.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#home .btn-lg {
+  width: 180px; 
+  height: 60px;
+  font-size: 24px;
+  font-weight: 200;
+  padding: 12px 20px;
+  font-family: "Open Sans";
+  color: white;
+  text-shadow: none;
+  background-color: #666;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.29);
+  border: 1px solid #fff;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+#home .btn-lg:hover {
+  background-color: rgba(255, 255, 255, 0.40);
+  color: white;
+}
+
+#home .btn-lg:active {
+  background-color: rgba(255, 255, 255, 0.50);
+  color: white;  
+}
+
+.lead {
+  margin-bottom: 35px;
+  font-size: 30px;
+}
+
+.lead.nyush {
+  color: #FFA11A;
+}
+
+.lead.nyush i {
+  color: white;
+}
+
+.lead.nyush a:hover {
+  color: inherit;
+  border-color: white;
+}
+
+.lead.buttons {
+  margin: 50px 0px 15px;
+}
+
+.lead .arrow {
+  color: #FFF;
+  color: rgba(255, 255, 255, 0.30);
+  text-shadow: none;
+  cursor: pointer;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.lead .arrow:hover {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.deadline{
+  font-size: 14px !important;
+  display: block;
+  margin-top: 3px;
+}
+
+.languages {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 18px;
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+
+.languages a:hover {
+  color: white;
+  border-bottom: 1px dashed #ffffff;
+}
+
+.languages a.subtle,
+.languages a.subtle:hover {
+  border-bottom: none;
+}
+
+.highlight {
+  color: #19B5FE;
+}
+
+.highlight-green {
+  color: #2ECC71;
+}
+
+.highlight-orange {
+  color: #F89406;
+}
+
+h2 {
+  color: #FFF;
+  font-size: 30px;
+  margin: 0px;
+  padding: 30px 0px;
+  text-shadow: none;
+  font-family: Montserrat;
+}
+
+.smaller {
+  color: #5C5C5C;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.spacer {
+  height: 20px;
+}
+
+#details-heading {
+  background: url("/image/back4.png");
+}
+
+#details-judges {
+  background: url("/image/back4.png");
+}
+
+#details-sponsors {
+  background: url("/image/green.png");
+}
+
+#details-faq {
+ background: url("/img/red.png");
+}
+
+#details-prizes {
+  background: url("/img/orange.png");
+}
+
+#schedule-title {
+  background: url("/img/light-blue.png");
+}
+
+#register-title {
+  background: url("/img/gradB.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#travel-title {
+  background: url("/img/grad.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sections {
+  font-size: 35px;
+  line-height: 60px;
+  font-weight: 600;
+  padding: 30px 0px 50px;
+}
+
+.details {
+  font-size: 26px;
+}
+
+.nyush-footer {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.nyush-footer a:hover {
+  color: white;
+  border-color: white;
+}
+
+.bullet {
+  font-size: 30px;
+}
+
+.headshot {
+  width: 150px;
+  border-radius: 1000px;
+}
+
+.judges .headshot {
+  width: 200px;
+  max-height: 200px;
+}
+
+.sponsors a:hover {
+  color: #108B44;
+}
+
+.sponsors .col-md-4, 
+.sponsors .col-md-6 {
+  line-height: 220px;
+  text-align:center;  
+}
+
+/*.col-md-4 img {*/
+  /*vertical-align: middle;*/
+  /*max-width: 90%;*/
+  /*max-height: 170px;*/
+/*}*/
+
+/*.col-md-6 img {*/
+  /*vertical-align: middle;*/
+  /*max-width: 100%;*/
+  /*max-height: 200px;*/
+/*}*/
+
+.sponsors img:hover {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=70);
+
+  /* Netscape */
+  -moz-opacity: 0.7;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.7;
+
+  /* Good browsers */
+  opacity: 0.7;
+}
+
+.sponsors .col-md-4 a,
+.sponsors .col-md-6 a {
+  border-bottom: none;
+}
+
+.question {
+  font-size: 30px;
+  line-height: 45px;
+  margin-bottom: 20px;
+  color: #EF4836;
+}
+
+.answer {
+  font-size: 20px;
+  line-height: 40px;
+  margin-bottom: 35px;
+}
+
+/*.nav {*/
+  /*font-size: 34px;*/
+  /*color: white;*/
+  /*background-color: #22313F;*/
+/*}*/
+
+/*.nav .col-md-3 {*/
+  /*padding: 12px 0px;*/
+  /*color: white;*/
+  /*cursor: pointer;*/
+/*}*/
+
+/*.nav .col-md-3:hover {*/
+  /*background-color: #19B5FE;*/
+/*}*/
+
+/*.col-md-3.active {*/
+  /*background-color: #19B5FE;*/
+/*}*/
+
+#team {
+  background: url("/img/purple.png");
+}
+
+#ambassadors {
+  background: url("/img/dark-blue.png");
+  margin-bottom: 50px;
+}
+
+.team-shots {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.judges .col-md-4 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.judges .col-md-4,
+.team-shots .col-md-4,
+.ambassador-shots .col-md-4 {
+  margin-bottom: 30px;
+}
+
+.judges p,
+.team-shots p,
+.ambassador-shots p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.judges .title,
+.team-shots .title,
+.ambassador-shots .title {
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.ambassador-shots .head {
+  font-size: 35px;
+  font-weight: 600;
+  padding-top: 30px;
+}
+
+.ambassador-shots .head p {
+  margin-bottom: 35px;
+}
+
+.highlight-dark-blue {
+  color: #1F3A93;
+}
+
+.talks {
+  max-width: 900px;
+  text-align: left;
+  margin: 0px auto;
+  padding: 0px 10px;
+}
+
+
+.schedule {
+  max-width: 600px;
+  min-width: 250px;
+  text-align: left;
+  margin: 0px auto;
+  padding: 0px 10px;
+}
+
+.talks td,
+.schedule td {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+.talks h3,
+.schedule h3{
+  font-weight: 600;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.prizes {
+  max-width: 800px;
+  min-width: 250px;
+  text-align: left;
+  margin: 30px auto;
+  padding: 0px 10px;
+}
+
+.prizes .award {
+  vertical-align: middle;
+  font-weight: 600;
+  max-width: 120px;
+}
+
+.prizes .description {
+  max-width: 500px;
+}
+
+.prizes .winner {
+  min-width: 100px;
+  vertical-align: middle;
+}
+
+.prize .winner strong {
+  text-align: center;
+}
+
+.prizes .header {
+  text-align: center;
+  font-weight: 600;
+}
+
+.prizes h3{
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+td.time {
+  width: 120px;
+  vertical-align: top;
+}
+
+td.event {
+  width: 300px;
+}
+
+td.location {
+  width: 205px;
+}
+
+.talks .time {
+  width: 110px;
+  vertical-align: top;
+}
+
+.talks .location {
+  width: 75px;
+}
+
+#register-container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+#register-container textarea {
+  height: 120px;
+}
+
+#travel-container {
+  max-width: 650px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+#passport {
+  display: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+#register-container a {
+  color: #428BCA;
+}
+
+#filepicker_dialog_container a {
+  border-bottom: none;
+}
+
+.form-control-feedback {
+  top: 32px;
+}
+
+#travel-container table {
+  max-width: 550px;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#travel-container h1 {
+  margin: 0px 0px 35px;
+}
+/*********** Responsiveness ***********/
+
+
+@media(max-width:449px){
+  #logo {
+    width: 280px;
+    margin: 25px 0px;
+  }
+
+  #home {
+      min-height: 568px;
+  }
+
+  .lead.buttons {
+    margin: 25px 0px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  .lead.nyush {
+    font-size: 18px;
+  }
+
+  .details {
+    font-size: 16px;
+  }
+
+  .details .row,
+  .judges .row,
+  .sponsors .row,
+  .faq .row {
+    padding: 0px 15px;
+  }
+
+
+  .bullet {
+    font-size: 26px;
+  }
+
+  .judges .col-md-4 {
+    margin-bottom: 30px;
+  }
+
+  .judges .row,
+  .sponsors .row {
+    font-size: 28px;
+  }
+
+  .sponsor-text {
+    font-size: 20px;
+  }
+
+  .question {
+    font-size: 26px;
+  }
+
+  .answer {
+    font-size: 18px;
+  }
+
+  /*.row {*/
+    /*padding: 0px 0px !important;*/
+    /*margin-right: 0px !important;*/
+    /*margin-left: 0px !important;*/
+  /*}*/
+
+  /*.nav .row {*/
+    /*margin-right: -15px !important;*/
+    /*margin-left: -15px !important;*/
+  /*}*/
+
+  .languages {
+    text-align: center;
+    padding-right: 0px;
+    padding-top: 10px;
+  }
+
+  #travel-title img,
+  #register-title img {
+    width: 280px;
+  }
+
+  .schedule table,
+  .talks table,
+  .prizes table {
+    font-size: 10px;
+  }
+}
+
+@media(min-width:450px){
+  #logo {
+    width: 450px;
+    margin: 100px 0px 50px;
+  }
+
+  #home {
+      min-height: 568px;
+  }
+
+  .lead.buttons {
+    margin: 50px 0px 15px;
+  }
+
+  .languages {
+    text-align: center;
+    padding-right: 0px;
+    padding-top: 10px;
+  }
+
+  .lead {
+    font-size: 26px;
+  }
+
+  .lead.nyush {
+    font-size: 24px;
+  }
+
+  .schedule table,
+  .talks table,
+  .prizes table {
+    font-size: 14px;
+  }
+
+}
+
+@media(min-width:768px){
+  #home {
+    min-height: 750px;
+  }
+
+  #logo {
+    width: 500px;
+  }
+
+  .lead {
+    font-size: 30px;
+  }
+
+  .lead.nyush {
+    font-size: 26px;
+  }
+
+  .details {
+    font-size: 16px;
+  }
+
+  .details .row,
+  .judges .row,
+  .sponsors .row,
+  .faq .row {
+    padding: 0px;
+  }
+
+  .bullet {
+    font-size: 30px;
+  }
+
+  .judges .col-md-4 {
+    margin-bottom: 30px;
+  }
+
+  .judges .row, .sponsors .row {
+    font-size: 32px;
+  }
+
+  .sponsor-text {
+    font-size: 30px;
+  }
+
+  .question {
+    font-size: 30px;
+  }
+
+  .answer {
+    font-size: 20px;
+  }
+
+  .languages {
+    text-align: right;
+    padding-right: 15px;
+    padding-top: 10px;
+  }
+
+  .schedule table,
+  .talks table,
+  .prizes table {
+    font-size: 20px;
+  }
+}
+
+@media(min-width:992px){
+  #logo {
+    width: 500px;
+  }
+
+  .lead {
+    font-size: 30px;
+  }
+
+  .lead.nyush {
+    font-size: 26px;
+  }
+
+  .judges .row, .sponsors .row {
+    font-size: 35px;
+  }
+
+  .sponsor-text {
+    font-size: 35px;
+  }
+}
+
+@media(min-width:1200px){
+  #logo {
+    width: 600px;
+  }
+}
+
