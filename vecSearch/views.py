@@ -7,7 +7,13 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'page/index.html')
+    return render(request, 'index.html')
+
+def display(request):
+    return render(request, 'display.jsp')
+
+def label(request):
+    return render(request, 'search.jsp')
 
 def similar(request):
     # POST = []
