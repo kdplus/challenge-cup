@@ -66,7 +66,7 @@ def display(request):
 
 
 def label(request):
-    return render(request, 'search.jsp')
+    return render(request, 'search.html')
 
 
 def similar(request):
