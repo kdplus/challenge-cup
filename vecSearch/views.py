@@ -12,7 +12,7 @@ import time
 import sys
 import os
 
-models_loaded = False
+models_loaded = True
 full_path = os.path.realpath(__file__)
 if models_loaded == False:
     stdout = sys.stdout
@@ -76,7 +76,8 @@ def similar(request):
     reload(sys)
     sys.stdout = stdout
     sys.setdefaultencoding('utf-8')
-    intext = "ABC和一二三离婚,暴力倾向，有精神病史"
+    intext = "和一二三离婚,暴力倾向，有精神病史"
+    intext = intext.encode("utf8")
     words = list(set(pseg.cut(intext)))
     for i in range(len(words)):
         if words[i].flag[:2] == 'nr':
@@ -117,8 +118,8 @@ def similar(request):
             count = 0
             for item in sims:
                 count += 1
-                res[str(count)] = texts[item[0]][0]
-                print texts[item[0]][0]
+                tid = texts[item[0]][0]
+                res[str(count)] = DivorceData.objects.get(id=tid).content
                 if count > 20:
                     break
 
