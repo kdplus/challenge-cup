@@ -64,7 +64,5 @@ function initRadio(){
 }
 
 function initBtn(){
-    $('#search-btn').click(function(){
-        $('#main-form').submit();
-    });
+
 }

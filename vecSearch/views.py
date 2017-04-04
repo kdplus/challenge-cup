@@ -11,6 +11,8 @@ import jieba.posseg as pseg
 import time
 import sys
 import os
+import datetime
+
 
 models_loaded = True
 full_path = os.path.realpath(__file__)
@@ -129,12 +131,66 @@ def similar(request):
 
 
 def query(request):
-    raw_sql = 'select * from divorce_data limit 1'
-    raw_querySet = DivorceData.objects.raw(raw_sql)
+    lb_ref = {'JTBL':'lb1', 'CH':'lb2', 'ND':'lb3', 'YQ':'lb4', 'YTRTJ':'lb5', 'YCCC':'lb6',
+              'ZYCC':'lb7', 'BMCC':'lb8', 'HSCC':'lb9', 'WZZW':'lb10', 'CLFH':'lb11',
+              'AZB':'lb12', 'DB':'lb13', 'XD':'lb14', 'CJ':'lb15', 'FC':'lb16', 'FLF':'lb17',
+              'SPF':'lb18', 'FWCQ':'lb19', 'ZFGJJ':'lb20', 'SFZS':'lb21', 'JSB':''}
+    vl_ref = {u'on':True,'':False}
+    cond_list = ['JSB', 'JRSF', 'XLBM', 'SWSF']
+    time_list = ['QSRQ', 'JSRQ']
+    condi = {'JSB':{'0':'mental_pros', '1':'mental_def'},
+             'JRSF':{'0':'soldier_pros', '1':'soldier_def'},
+             'XLBM':{'0':'missing_pros', '1':'missing_def'},
+             'SWSF':{'0':'foreign_pros', '1':'foreign_def'}}
+    first_filter = True
+    time_limit = {'QSRQ':None, 'JSRQ':None}
+    if request.is_ajax() and request.method == 'GET':
+        kw = {}
+        for key in request.GET:
+            print key
+            valuelist = request.GET.getlist(key)
+            print valuelist[0]
+                # if first_filter == True:
+                    # kw[lb] =
+                    # lbid = 'lb'+str(lb_ref[key])
+                    # query_data = DivorceData.objects.filter(lbid=True)
+                # query_data = query_data.filter
+            if valuelist[0]!='':
+                kw_key = ''
+                if key in cond_list and valuelist[0] != '':
+                    if valuelist[0] == 'BOTH':
+                        kw[condi[key][str(1)]] = True
+                        kw[condi[key][str(0)]] = True
+                    elif valuelist[0] == 'YG':
+                        kw[condi[key][str(1)]] = True
+                    elif valuelist[0] == 'BG':
+                        kw[condi[key][str(0)]] = True
+                elif key in time_list:
+                    time_limit[key] = valuelist[0]
+                else:
+                    kw[lb_ref[key]] = vl_ref[valuelist[0]]
+    print(kw)
+    print(time_limit)
+    query_result = DivorceData.objects.filter(**kw)
+    if time_limit['QSRQ'] != None:
+        date = datetime.datetime.strptime(time_limit['QSRQ'], "%Y-%m-%d")
+        print(date)
+        query_result = query_result.filter(casedate__gte=date)
+    if time_limit['JSRQ'] != None:
+        date = datetime.datetime.strptime(time_limit['JSRQ'], "%Y-%m-%d")
+        print(date)
+        query_result = query_result.filter(casedate__lte=date)
+    res_dict = {}
+    cnt = 0
+    for obj in query_result[:20]:
+        res_dict[cnt] = obj.content
+        cnt += 1
+    # raw_sql = 'select * from divorce_data limit 1'
+    # raw_querySet = DivorceData.objects.raw(raw_sql)
     # for obj in raw_querySet:
     #     print obj
     #     response = JsonResponse({'data': str(obj)})
     # response = JsonResponse({'data': raw_querySet[0].path.encode('utf-8')})
     # return response
-    print (raw_querySet[0].content)
-    return HttpResponse(json.dumps(raw_querySet[0].content.encode('utf-8'), ensure_ascii=False), content_type="application/json;charset=utf-8")
+    # print (raw_querySet[0].content)
+    return HttpResponse(json.dumps(res_dict, ensure_ascii=False), content_type="application/json;charset=utf-8")
