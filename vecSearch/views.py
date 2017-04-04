@@ -12,7 +12,7 @@ import time
 import sys
 import os
 
-models_loaded = True
+models_loaded = False
 full_path = os.path.realpath(__file__)
 if models_loaded == False:
     stdout = sys.stdout
@@ -124,7 +124,7 @@ def similar(request):
                     break
 
     print time.time()-tic
-    response = HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json")
+    response = HttpResponse(json.dumps(res, ensure_ascii=False), content_type="application/json;charset=utf-8")
     return response
 
 
