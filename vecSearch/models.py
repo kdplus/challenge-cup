@@ -45,7 +45,18 @@ class DivorceData(models.Model):
     missing_def = models.IntegerField(blank=True, null=True)
     foreign_pros = models.IntegerField(blank=True, null=True)
     foreign_def = models.IntegerField(blank=True, null=True)
+    casedate = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'divorce_data'
+
+
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
