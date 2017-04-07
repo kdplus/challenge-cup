@@ -313,9 +313,9 @@
                 //请求成功后的回调函数有两个参数
                 success:function(data,textStatus){
                     console.log(data);
+                    document.getElementById('search-result2').value = data[0];
                 }
             });
-            document.getElementById('search-result2').value = document.getElementById('search-input2').value;
             return false;
         };
     </script>
