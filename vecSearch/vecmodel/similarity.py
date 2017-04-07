@@ -83,7 +83,7 @@ if len(tmp_text.split()):
     sims = index[vec_lsi]
     sims = sorted(enumerate(sims), key=lambda item: -item[1])
 
-    if sims[0][1] < 0.5:
+    if sims[0][1] < 0.2:
         print sims[0][1]
         print "Similar file does not exist in the database."
     else:
