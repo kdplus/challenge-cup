@@ -14,7 +14,7 @@ import os
 import datetime
 
 
-models_loaded = False
+models_loaded = True
 full_path = os.path.realpath(__file__)
 if models_loaded == False:
     stdout = sys.stdout
@@ -69,6 +69,12 @@ def display(request):
 
 def label(request):
     return render(request, 'search.html')
+
+def people(request):
+    return render(request, 'people.html')
+
+def introduction(request):
+    return render(request, 'introduction.html')
 
 
 def similar(request):
