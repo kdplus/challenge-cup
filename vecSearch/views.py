@@ -78,13 +78,14 @@ def introduction(request):
 
 
 def similar(request):
-    # POST = []
-    # data = ...
     stdout = sys.stdout
     reload(sys)
     sys.stdout = stdout
     sys.setdefaultencoding('utf-8')
     intext = "和一二三离婚,暴力倾向，有精神病史"
+    if request.is_ajax() and request.method == 'GET':
+        for key in request.GET:
+            intext = key
     intext = intext.encode("utf8")
     words = list(set(pseg.cut(intext)))
     for i in range(len(words)):

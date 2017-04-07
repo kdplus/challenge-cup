@@ -157,10 +157,12 @@
                         <br>
 
                         <div align="center">
-                            <textarea type="text" id="search-result" rows="5" cols="50"></textarea>
+
                         </div>
                     </div>
+
                 </div>
+
             </div>
 
             <div class="tab-pane fade" id="tab_divorce2" >
@@ -229,7 +231,25 @@
             </div>
         </div>
     </div>
+    <div class="container">
+                <div class="row col-lg-offset-1 col-lg-10">
+                    <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading">搜索结果</div>
+                  <div type="text" class="panel-body" id="result">
+                  </div>
 
+                  <!-- List group -->
+                  <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+                </div>
+                </div>
+        </div>
     <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog"-->
          <!--aria-labelledby="myModalLabel" aria-hidden="true">-->
         <!--<div class="modal-dialog">-->
@@ -275,7 +295,7 @@
                     <!--$("#display").html($("#display").html()+jsonObj[i].name+"今年"+jsonObj[i].age+"岁！！！<br/>");-->
                     <!--}-->
                     console.log(data);
-                    document.getElementById('search-result').value = data[0];
+                    document.getElementById('result').value = data[0];
                 }
             });
 
