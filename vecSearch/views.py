@@ -14,7 +14,7 @@ import os
 import datetime
 
 
-models_loaded = True
+models_loaded = False
 full_path = os.path.realpath(__file__)
 if models_loaded == False:
     stdout = sys.stdout
@@ -120,7 +120,7 @@ def similar(request):
         sims = sorted(enumerate(sims), key=lambda item: -item[1])
 
         global texts
-        if sims[0][1] < 0.5:
+        if sims[0][1] < 0.13:
             print sims[0][1]
             print "Similar file does not exist in the database."
         else:
