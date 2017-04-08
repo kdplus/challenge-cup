@@ -154,7 +154,6 @@
                             </button>
                         </div>
                     </div>
-
                 </div>
 
             </div>
@@ -285,13 +284,13 @@
                     console.log(data);
                    if(document.getElementById('result').style.visibility='hidden') {
                    document.getElementById('result').style.visibility='visible';
+                   }
                    document.getElementById('list0').value = data[0];
                    document.getElementById('list1').value = data[1];
                    document.getElementById('list2').value = data[2];
                    document.getElementById('list3').value = data[3];
                    document.getElementById('list4').value = data[4];
                    document.getElementById('list5').value = data[5];
-                   }
                 }
             });
 
@@ -309,8 +308,15 @@
                 //请求成功后的回调函数有两个参数
                 success:function(data,textStatus){
                     console.log(data);
-                    document.getElementById('search-result2').value = data[0];
-                }
+                   if(document.getElementById('result').style.visibility='hidden') {
+                   document.getElementById('result').style.visibility='visible';
+                   }
+                   document.getElementById('list0').value = data[0];
+                   document.getElementById('list1').value = data[1];
+                   document.getElementById('list2').value = data[2];
+                   document.getElementById('list3').value = data[3];
+                   document.getElementById('list4').value = data[4];
+                   document.getElementById('list5').value = data[5];                }
             });
             return false;
         };
