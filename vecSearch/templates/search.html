@@ -153,12 +153,6 @@
                                 查询
                             </button>
                         </div>
-
-                        <br>
-
-                        <div align="center">
-
-                        </div>
                     </div>
 
                 </div>
@@ -177,12 +171,6 @@
                     <button type="button" class="btn btn-primary btn-lg" id="search-btn2" onclick="DoSubmit2();">
                         查询
                     </button>
-                </div>
-
-                <br>
-
-                <div align="center">
-                    <textarea type="text" id="search-result2" rows="5" cols="50"></textarea>
                 </div>
             </div>
 
@@ -231,7 +219,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="result" style="visibility: hidden">
                 <div class="row col-lg-offset-1 col-lg-10">
                     <div class="panel panel-default">
                   <!-- Default panel contents -->
@@ -241,11 +229,11 @@
 
                   <!-- List group -->
                   <ul class="list-group">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item"><textarea type="text" id="list0" rows="5" cols="80">2333</textarea></li>
+                    <li class="list-group-item"><textarea type="text" id="list1" rows="5" cols="80">2333</textarea></li>
+                    <li class="list-group-item"><textarea type="text" id="list2" rows="5" cols="80">2333</textarea></li>
+                    <li class="list-group-item"><textarea type="text" id="list3" rows="5" cols="80">2333</textarea></li>
+                    <li class="list-group-item"><textarea type="text" id="list4" rows="5" cols="80">2333</textarea></li>
                   </ul>
                 </div>
                 </div>
@@ -295,7 +283,15 @@
                     <!--$("#display").html($("#display").html()+jsonObj[i].name+"今年"+jsonObj[i].age+"岁！！！<br/>");-->
                     <!--}-->
                     console.log(data);
-                    document.getElementById('result').value = data[0];
+                   if(document.getElementById('result').style.visibility='hidden') {
+                   document.getElementById('result').style.visibility='visible';
+                   document.getElementById('list0').value = data[0];
+                   document.getElementById('list1').value = data[1];
+                   document.getElementById('list2').value = data[2];
+                   document.getElementById('list3').value = data[3];
+                   document.getElementById('list4').value = data[4];
+                   document.getElementById('list5').value = data[5];
+                   }
                 }
             });
 
